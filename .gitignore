@@ -1,0 +1,13 @@
+.DS_Store
+backup
+dist
+notes
+refer
+tmp
+tmp.txt
+tmp.TXT
+eclipse-workspace
+.~*
+*.dmp
+problems
+
