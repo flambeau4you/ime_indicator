@@ -1,3 +1,5 @@
+# IME Indicator
+
 ## Introduction
 
 IME Indicator is showing current language mode of the keyboard.

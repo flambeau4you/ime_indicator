@@ -14,4 +14,3 @@
 
 1. Colors of IME modes.
 1. Screen position.
-

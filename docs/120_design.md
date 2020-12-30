@@ -14,6 +14,7 @@
 ## Configuration
 
 Colors are express as six hexadecimal numbers start with '#' symbol.
+
 1. OffColor: Off color. Default: #ff0000
 1. OnColor: On color. Default: #00ff00
 1. Position: Position of screen. Values: top, bottom, left, right. Default: top
