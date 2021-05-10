@@ -28,6 +28,9 @@ namespace ime_indicator
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, uint wParam, ref MainForm.COPYDATASTRUCT lParam);
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        public static extern short GetKeyState(int keyCode);
+
         private const int WM_IME_CONTROL = 643;
         private const int IMC_GETOPENSTATUS = 5;
 
@@ -132,6 +135,9 @@ namespace ime_indicator
             IntPtr hWnd = MainForm.ImmGetDefaultIMEWnd(foregroundWindow);
             string activeWindowTitle = this.GetActiveWindowTitle();
             MainForm.COPYDATASTRUCT copydatastruct = default(MainForm.COPYDATASTRUCT);
+
+            // Gets Caps lock state.
+            bool capsLock = (((ushort)GetKeyState(0x14)) & 0xffff) != 0;
 
             // Gets the IME state.
             IntPtr value = MainForm.SendMessage(hWnd, WM_IME_CONTROL, IMC_GETOPENSTATUS, ref copydatastruct);
