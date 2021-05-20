@@ -168,6 +168,16 @@ namespace ime_indicator
                     this.BackColor = Color.Blue;
                 }
             }
+
+            if (capsLock)
+            {
+                this.Visible = !this.Visible;
+            } 
+            else
+            {
+                this.Visible = true;
+            }
+
         }
 
         protected override CreateParams CreateParams
